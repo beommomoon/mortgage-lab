@@ -7,12 +7,23 @@ import { useState, useEffect } from 'react'; // ✅ 이렇게 바꿔주세요!
 import Link from 'next/link';
 import Image from 'next/image';
 
+type SheetData = {
+  name: string;
+  phone: string;
+  property: string;
+  address: string;
+  job: string;
+  income: string;
+  time: string;
+  notes: string;
+};
+
 export default function Home() {
   const router = useRouter();
   const images = ['/slide1.jpg', '/slide2.jpg', '/slide3.jpg'];
   const [mode, setMode] = useState<'home' | 'login' | 'admin'>('home');
   const [password, setPassword] = useState('');
-  const [data, setData] = useState([] as any[]); // ✅ 시트 데이터용
+  const [data, setData] = useState<SheetData[]>([]); // ✅ 시트 데이터용
 
   const handleLogin = () => {
     if (password === 'mentor') {
