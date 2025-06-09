@@ -1,12 +1,17 @@
 'use client';
 
-import React from 'react'; // ✅ 이 줄을 추가
+import React from 'react';
 import { useState, useEffect } from 'react';
+
+// ✅ 상담 데이터 타입 정의
+type Submission = {
+  [key: string]: string;
+};
 
 export default function AdminPanel() {
   const [password, setPassword] = useState('');
   const [authenticated, setAuthenticated] = useState(false);
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<Submission[]>([]); // any 제거 → 명확한 타입 적용
 
   const handleLogin = () => {
     if (password === 'mentor') {
@@ -20,8 +25,8 @@ export default function AdminPanel() {
     if (authenticated) {
       fetch('https://script.google.com/macros/s/AKfycbzNpQvQ4b1FZ1V4ZeLT-fSzQZNSJPopEHzSO71YNgYX_1XtY3enpWGbab2jMdoxZUs__w/exec')
         .then(res => res.json())
-        .then((resData) => setData(resData))
-        .catch(err => alert('데이터를 불러오지 못했습니다.'));
+        .then((resData: Submission[]) => setData(resData)) // 명확한 응답 타입
+        .catch(() => alert('데이터를 불러오지 못했습니다.'));
     }
   }, [authenticated]);
 

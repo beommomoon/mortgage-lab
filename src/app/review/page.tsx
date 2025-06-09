@@ -2,8 +2,16 @@
 
 import { useEffect, useState } from 'react';
 
+type Submission = {
+  대출종류: string;
+  직업: string;
+  이름: string;
+  한줄평: string;
+  상세: string;
+};
+
 export default function ReviewPage() {
-  const [reviews, setReviews] = useState<any[]>([]);
+  const [reviews, setReviews] = useState<Submission[]>([]);
   const [page, setPage] = useState(1);
   const reviewsPerPage = 5;
 

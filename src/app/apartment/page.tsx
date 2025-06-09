@@ -1,6 +1,6 @@
 'use client';
 
-import { FaCheckCircle, FaHome, FaFileAlt, FaEdit } from 'react-icons/fa';
+import { FaCheckCircle, FaFileAlt, FaEdit } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
 
 export default function AdditionalLoanPage() {
@@ -18,16 +18,16 @@ export default function AdditionalLoanPage() {
         <div className="bg-orange-50 border-l-4 border-orange-400 p-6 shadow-sm rounded-md">
           <h3 className="text-xl font-bold text-orange-600 mb-3">💡 1순위 시중은행 대출이 있는 경우</h3>
           <p className="text-base text-gray-800 leading-relaxed">
-            <span className="font-semibold">직장인 ➜</span> 최대한도 <strong>70%</strong> (은행, 보험사, 조합)<br />
-            <span className="font-semibold">신규사업자 ➜</span> 최대한도 <strong>80~85%</strong> (농협, 수협, 신협, 새마을금고)<br />
-            <span className="font-semibold">개인/법인사업자 ➜</span> 최대한도 <strong>90%</strong> (저축은행, 캐피탈)
+            <span className="font-semibold">● 직장인 ▶</span> 최대한도 <strong>70%</strong> (은행, 보험사, 조합)<br />
+            <span className="font-semibold">● 신규사업자 ▶</span> 최대한도 <strong>80~85%</strong> (농협, 수협, 신협, 새마을금고)<br />
+            <span className="font-semibold">● 개인/법인사업자 ▶</span> 최대한도 <strong>90%</strong> (저축은행, 캐피탈)
           </p>
         </div>
 
         <div className="bg-blue-50 border-l-4 border-blue-400 p-6 shadow-sm rounded-md">
           <h3 className="text-xl font-bold text-blue-600 mb-3">💡 1순위가 저축은행 · 캐피탈인 경우</h3>
           <p className="text-base text-gray-800 leading-relaxed">
-            <span className="font-semibold">개인/법인사업자 ➜</span> 최대한도 <strong>90%</strong> (저축은행, 캐피탈)
+            <span className="font-semibold">● 개인/법인사업자 ▶</span> 최대한도 <strong>90%</strong> (저축은행, 캐피탈)
           </p>
         </div>
 
@@ -45,7 +45,7 @@ export default function AdditionalLoanPage() {
         <h2 className="text-2xl font-bold text-orange-600 mb-3">전문가에 비교견적 상담받기</h2>
         <p className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">
           추가담보대출 한도 확인 및 조건 비교를 원하신다면 지금 무료 상담을 신청하세요.<br />
-          은행, 보험사, 조합, 저축은행, 캐피탈 등 수백개의 상품을을 빠르게 비교해드립니다.
+          은행, 보험사, 조합, 저축은행, 캐피탈 등 수백개의 상품을 빠르게 비교해드립니다.
         </p>
         <button
           className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full text-base sm:text-lg"

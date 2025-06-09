@@ -2,14 +2,9 @@
 
 import { FaCheckCircle, FaHome, FaFileAlt, FaEdit } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
 
 export default function HousingLoanGuide() {
   const router = useRouter();
-
-  const handleConsultationClick = () => {
-    router.push('/consultation');
-  };
 
   return (
     <main className="px-4 py-10 max-w-6xl mx-auto text-gray-800">

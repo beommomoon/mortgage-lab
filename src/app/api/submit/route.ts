@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
     } else {
       return NextResponse.json({ error: 'Failed to submit form' }, { status: 500 });
     }
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Unexpected error occurred' }, { status: 500 });
   }
 }
