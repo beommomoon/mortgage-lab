@@ -12,7 +12,7 @@ export default function Home() {
   const images = ['/slide1.jpg', '/slide2.jpg', '/slide3.jpg'];
   const [mode, setMode] = useState<'home' | 'login' | 'admin'>('home');
   const [password, setPassword] = useState('');
-  const [data, setData] = useState([]); // ✅ 시트 데이터용
+  const [data, setData] = useState([] as any[]); // ✅ 시트 데이터용
 
   const handleLogin = () => {
     if (password === 'mentor') {
