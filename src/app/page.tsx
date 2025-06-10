@@ -187,7 +187,7 @@ export default function Home() {
         quality={100}
       />
     </div>
-    <div className="py-3 px-2 text-center text-lg font-extrabold text-gray-800">정책자금신청 "클릭"</div>
+    <div className="py-3 px-2 text-center text-lg font-extrabold text-gray-800">정책자금신청</div>
   </a>
 </div>
 
@@ -216,7 +216,7 @@ export default function Home() {
                 <p className="text-xl sm:text-2xl font-bold text-gray-700 leading-relaxed font-sans text-center">
                   수백 개 금융사 상품(은행·캐피탈·저축은행) 조건을 비교분석하여,
                   <br className="hidden sm:block" />
-                  금융전문가가 고객님 상황에 꼭 맞는 <span className="text-red-600 font-extrabold">"맞춤 대출"</span>을 찾아드립니다.
+                  금융전문가가 고객님 상황에 꼭 맞는 <span className="text-red-600 font-extrabold">맞춤 대출</span>을 찾아드립니다.
                 </p>
               </div>
 
