@@ -1,3 +1,8 @@
+export const metadata = {
+  title: '모기지랩 - 부동산 담보대출 비교상담',
+  description: '모든 금융사 조건을 비교하고 나에게 꼭 맞는 대출을 찾아주는 전문 컨설팅, 지금 무료로 상담받아보세요.',
+};
+
 'use client';
 
 import { useRouter } from 'next/navigation';
