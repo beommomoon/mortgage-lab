@@ -1,3 +1,5 @@
+'use client';
+
 import Slider from 'react-slick';
 import { useEffect, useState } from 'react';
 import 'slick-carousel/slick/slick.css';
@@ -36,9 +38,9 @@ const reviews = [
   },
   {
     name: '정**님', age: '50대 여성', type: '기존대출대환',
-    text: '전재산인 아파트를 담보로 진행했는데 전문상담인에에 정확한 설명과 친절한 대응이 인상 깊었습니다.',
+    text: '전재산인 아파트를 담보로 진행했는데 전문상담인의 정확한 설명과 친절한 대응이 인상 깊었습니다.',
     highlight: ['정확한 설명', '친절한 대응'],
-    tag: '#아파트트전문 #전문가상담 #신속진행'
+    tag: '#아파트전문 #전문가상담 #신속진행'
   },
   {
     name: '오**님', age: '40대 남성', type: '신규담보대출',
@@ -69,6 +71,7 @@ export default function ReviewCarousel() {
     responsive: [
       { breakpoint: 1280, settings: { slidesToShow: 3 } },
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1.5 } },
       { breakpoint: 640, settings: { slidesToShow: 1.1 } },
     ],
   };
@@ -76,7 +79,7 @@ export default function ReviewCarousel() {
   if (!mounted) return null;
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-2 py-6">
+    <div className="w-full max-w-6xl mx-auto px-4 py-6">
       <Slider {...settings}>
         {reviews.map((r, i) => {
           const highlighted = r.highlight.reduce(
@@ -89,17 +92,20 @@ export default function ReviewCarousel() {
           );
 
           return (
-            <div key={i} className="px-2">
-              <div className="bg-white border shadow-md rounded-xl p-4 h-full flex flex-col justify-between">
+            <div key={i} className="px-2 box-border min-w-0">
+              <div className="bg-white border shadow-md rounded-xl p-4 h-full flex flex-col justify-between min-h-[200px]">
                 <div className="text-orange-500 text-3xl mb-2">“</div>
                 <div
-                  className="text-sm text-gray-700 mb-2"
+                  className="text-sm text-gray-700 mb-2 leading-relaxed"
                   dangerouslySetInnerHTML={{ __html: highlighted }}
                 />
                 <p className="text-xs text-gray-500 mb-3">{r.tag}</p>
                 <div className="mt-auto text-xs text-gray-700 font-semibold">
-                  {r.name} <span className="font-normal text-gray-500">{r.age}</span>
-                  <div className="text-orange-500 font-bold text-sm">{r.type}</div>
+                  {r.name}{' '}
+                  <span className="font-normal text-gray-500">{r.age}</span>
+                  <div className="text-orange-500 font-bold text-sm">
+                    {r.type}
+                  </div>
                 </div>
               </div>
             </div>
