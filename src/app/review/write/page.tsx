@@ -24,7 +24,7 @@ export default function ReviewWritePage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbywYzNCx9k-F8GxjErB0i9eQxmjHY4vyWIEaM4sRkGN0iuj9vRIBNnbZPbP9L5ZcEh6/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycby4LKhFN6Lmanj4KnuLbVQ_pkFl8bBbCQ54o20TELsUFKO4Mh-ORX9V6QwdxwRZmPo7/exec', {
         method: 'POST',
         body: JSON.stringify(form),
       });
