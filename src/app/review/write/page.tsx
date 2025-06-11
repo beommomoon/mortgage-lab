@@ -23,6 +23,9 @@ export default function ReviewWritePage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    console.log('폼 전송 내용:', form); // ✅ 이 줄 추가!
+    
     try {
       await fetch('https://script.google.com/macros/s/AKfycbz2mw9RL7nLHWn9exLUe_Zci8r-grIvKzEG269HZSKO5D8DypKoq5RPZRzcv_bdhwoK/exec', {
         method: 'POST',
