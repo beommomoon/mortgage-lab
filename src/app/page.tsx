@@ -46,7 +46,7 @@ export default function Home() {
     <main className="relative bg-white min-h-screen flex flex-col items-center justify-start px-4 pt-10 pb-20">
       {mode === 'home' && (
         <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 flex items-center gap-3">
-          <Link href="/review">
+          <Link href="/review/write">
             <span className="text-base sm:text-lg font-semibold text-white bg-orange-500 px-4 py-2 rounded-full shadow hover:bg-orange-600 transition">
               ✍ 대출후기 작성하기
             </span>
@@ -203,7 +203,7 @@ export default function Home() {
 
             {/* 후기 더보기 버튼 */}
             <div className="text-center mt-4">
-              <Link href="/review">
+              <Link href="/review/write">
                 <span className="text-2xl text-blue-600 underline hover:text-blue-800 transition font-normal font-sans">
                   대출후기 더보기 →
                 </span>

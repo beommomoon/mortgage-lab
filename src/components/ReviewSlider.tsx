@@ -1,14 +1,30 @@
 'use client';
 
 import Slider from 'react-slick';
+import { useEffect, useState } from 'react';
+
+type Review = {
+  이름: string;
+  연령대: string;
+  성별: string;
+  대출종류: string;
+  한줄평: string;
+  상세후기: string;
+  테그: string;
+  작성시각: string;
+};
 
 export default function ReviewSlider() {
-  const reviews = [
-    { name: '김하늘', text: '💬 전문가처럼 설명해줘서 너무 좋았어요!' },
-    { name: '이철수', text: '👍 대출비교 쉽게 해줘서 신뢰가 갔어요!' },
-    { name: '박미영', text: '💡 정부자금 신청도 도와줘서 정말 유익했어요!' },
-    { name: '정지훈', text: '📞 문의했는데 너무 친절하게 상담해주셨어요.' },
-  ];
+  const [reviews, setReviews] = useState<Review[]>([]);
+
+  useEffect(() => {
+    fetch('https://script.google.com/macros/s/AKfycbyprsWACD6qED3maQTJnQ3u-Okq2UzBFQ9mxs6JXuplqGUy5uD802SoP8VPgfc8_iM/exec')
+      .then(res => res.json())
+      .then(data => {
+        console.log('✅ 후기 데이터:', data);
+        setReviews(data.slice(0, 8));
+      });
+  }, []);
 
   const settings = {
     dots: true,
@@ -25,8 +41,12 @@ export default function ReviewSlider() {
       <Slider {...settings}>
         {reviews.map((review, index) => (
           <div key={index} className="bg-white p-6 rounded-xl shadow-md text-center">
-            <p className="text-lg font-medium text-gray-700 mb-2">{review.text}</p>
-            <p className="text-sm text-gray-500">- {review.name} 고객님</p>
+            <p className="text-lg font-medium text-gray-700 mb-2">"{review['한줄평']}"</p>
+            <p className="text-sm text-gray-600 mb-4">{review['상세후기']}</p>
+            <p className="text-xs text-gray-500">
+              👤 {review['연령대']} / {review['성별']} / {review['대출종류']} 고객님
+            </p>
+            <p className="text-xs text-green-600 mt-1">{review['테그']}</p>
           </div>
         ))}
       </Slider>
