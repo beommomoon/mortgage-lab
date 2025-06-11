@@ -3,14 +3,14 @@
 import { useEffect, useState } from 'react';
 
 type Review = {
-  이름: string;
-  연령대: string;
-  성별: string;
-  대출종류: string;
-  한줄평: string;
-  상세후기: string;
-  테그: string;
-  작성시각: string;
+  name: string;
+  age: string;
+  gender: string;
+  type: string;
+  summary: string;
+  detail: string;
+  tag: string;
+  time: string;
 };
 
 export default function ReviewBoard() {
@@ -18,13 +18,13 @@ export default function ReviewBoard() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('https://script.google.com/macros/s/AKfycbz2mw9RL7nLHWn9exLUe_Zci8r-grIvKzEG269HZSKO5D8DypKoq5RPZRzcv_bdhwoK/exec')
+    fetch('https://script.google.com/macros/s/AKfycbzO-_Wg6xDgHcqCJ5NGC76_Ffn7m3X4E7_JWaAjZeh_3oCHDFlb7kDeUcsXyuusYXevyg/exec')
       .then((res) => {
         if (!res.ok) throw new Error('응답 실패');
         return res.json();
       })
       .then((data) => {
-        setReviews(data.reverse());
+        setReviews(data.data); // ✅ "data" 키에서 리스트 꺼냄
       })
       .catch((err) => {
         console.error('❌ fetch 실패:', err);
@@ -46,9 +46,9 @@ export default function ReviewBoard() {
       <ul className="space-y-4">
         {reviews.map((r, i) => (
           <li key={i} className="border-b pb-3">
-            <p className="text-gray-800 font-semibold">✅ [{r['대출종류']}] {r['한줄평']}</p>
+            <p className="text-gray-800 font-semibold">✅ [{r.type}] {r.summary}</p>
             <p className="text-sm text-gray-600 mt-1">
-              / {r['연령대']} / {r['성별']} / {r['이름']} 고객님
+              / {r.age} / {r.gender} / {r.name} 고객님
             </p>
           </li>
         ))}

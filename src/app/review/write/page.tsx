@@ -25,9 +25,9 @@ export default function ReviewWritePage() {
     e.preventDefault();
 
     console.log('폼 전송 내용:', form); // ✅ 확인용 로그
-    
+
     try {
-      const res = await fetch('https://script.google.com/macros/s/AKfycbY0mFMjieql1ncP2_E-dEcsnQGE5p0Fv5wKUtW3dnfMyhPvUmG1rnGUA_6cdU0TPmJ/exec', {
+      const res = await fetch('/api/review', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,7 +35,9 @@ export default function ReviewWritePage() {
         body: JSON.stringify(form),
       });
 
-      const text = await res.text();
+      const text = await res.text(); // ✅ JSON이 아닌 경우 대비
+      console.log('응답 내용:', text); // ✅ 콘솔 출력으로 응답 확인
+
       if (text.includes('success')) {
         alert('후기가 성공적으로 제출되었습니다!');
         setForm({
@@ -50,7 +52,8 @@ export default function ReviewWritePage() {
       } else {
         alert('제출에 실패했습니다.');
       }
-    } catch {
+    } catch (err) {
+      console.error('제출 오류:', err);
       alert('제출에 실패했습니다.');
     }
   };
