@@ -23,15 +23,21 @@ export default function ReviewWritePage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    console.log('폼 전송 내용:', form); // ✅ 이 줄 추가!
+    
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbyY0mFMijeql1ncP2_E-dEcsnQGE5p0Fv5wKUtW3dnfMyhPvUmG1rnGUA_6cdU0TpmJ/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbyprsWACD6qED3maQTJnQ3u-Okq2UzBFQ9mxs6JXuplqGUy5uD802SoP8VPgfc8_iM/exec', {
         method: 'POST',
-        body: JSON.stringify(form),
-      });
-      alert('후기가 성공적으로 제출되었습니다!');
-    } catch {
-      alert('제출에 실패했습니다.');
-    }
+      headers: {
+        'Content-Type': 'application/json', // ✅ 이 줄이 꼭 필요합니다!
+      },
+      body: JSON.stringify(form),
+    });
+    alert('후기가 성공적으로 제출되었습니다!');
+  } catch {
+    alert('제출에 실패했습니다.');
+  }
   };
 
   return (

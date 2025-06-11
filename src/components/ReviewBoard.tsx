@@ -18,7 +18,7 @@ export default function ReviewBoard() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('https://script.google.com/macros/s/AKfycbxfgVx_wWMa6UuRZQ2K0rG8GLPAVVbgVLoh1QOu694NP2Q_HhFFZEs_gW0l_tJGU8E/exec')
+    fetch('https://script.google.com/macros/s/AKfycbz2mw9RL7nLHWn9exLUe_Zci8r-grIvKzEG269HZSKO5D8DypKoq5RPZRzcv_bdhwoK/exec')
       .then((res) => {
         if (!res.ok) throw new Error('응답 실패');
         return res.json();
@@ -34,7 +34,7 @@ export default function ReviewBoard() {
 
   if (error) {
     return (
-      <div className="bg-red-100 text-red-700 p-4 rounded max-w-2xl mx-auto mb-10">
+      <div className="bg-red-100 text-red-700 p-4 rounded max-w-2xl mx-auto mb-10 text-center">
         ⚠️ {error}
       </div>
     );
@@ -42,12 +42,14 @@ export default function ReviewBoard() {
 
   return (
     <section className="bg-white p-6 rounded-xl shadow mb-10 max-w-2xl mx-auto">
-      <h2 className="text-xl font-bold text-center text-blue-600 mb-4">📋 작성된 대출후기</h2>
+      <h2 className="text-xl font-bold text-center text-blue-600 mb-4">📢 대출후기 게시판</h2>
       <ul className="space-y-4">
         {reviews.map((r, i) => (
-          <li key={i} className="border-b pb-4">
+          <li key={i} className="border-b pb-3">
             <p className="text-gray-800 font-semibold">✅ [{r['대출종류']}] {r['한줄평']}</p>
-            <div className="text-sm text-gray-600 mt-1">/ {r['연령대']} / {r['성별']} / {r['이름']} 고객님</div>
+            <p className="text-sm text-gray-600 mt-1">
+              / {r['연령대']} / {r['성별']} / {r['이름']} 고객님
+            </p>
           </li>
         ))}
       </ul>
