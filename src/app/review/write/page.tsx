@@ -24,7 +24,7 @@ export default function ReviewWritePage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await fetch('https://script.google.com/macros/s/AKfycby4LKhFN6Lmanj4KnuLbVQ_pkFl8bBbCQ54o20TELsUFKO4Mh-ORX9V6QwdxwRZmPo7/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbz2mw9RL7nLHWn9exLUe_Zci8r-grIvKzEG269HZSKO5D8DypKoq5RPZRzcv_bdhwoK/exec', {
         method: 'POST',
       headers: {
         'Content-Type': 'application/json', // ✅ 이 줄이 꼭 필요합니다!
