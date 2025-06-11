@@ -18,7 +18,7 @@ export default function ReviewBoard() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('https://script.google.com/macros/s/AKfycbyprsWACD6qED3maQTJnQ3u-Okq2UzBFQ9mxs6JXuplqGUy5uD802SoP8VPgfc8_iM/exec')
+    fetch('https://script.google.com/macros/s/AKfycbz2mw9RL7nLHWn9exLUe_Zci8r-grIvKzEG269HZSKO5D8DypKoq5RPZRzcv_bdhwoK/exec')
       .then((res) => {
         if (!res.ok) throw new Error('응답 실패');
         return res.json();
