@@ -24,20 +24,35 @@ export default function ReviewWritePage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    console.log('폼 전송 내용:', form); // ✅ 이 줄 추가!
+    console.log('폼 전송 내용:', form); // ✅ 확인용 로그
     
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbyprsWACD6qED3maQTJnQ3u-Okq2UzBFQ9mxs6JXuplqGUy5uD802SoP8VPgfc8_iM/exec', {
+      const res = await fetch('https://script.google.com/macros/s/AKfycbY0mFMjieql1ncP2_E-dEcsnQGE5p0Fv5wKUtW3dnfMyhPvUmG1rnGUA_6cdU0TPmJ/exec', {
         method: 'POST',
-      headers: {
-        'Content-Type': 'application/json', // ✅ 이 줄이 꼭 필요합니다!
-      },
-      body: JSON.stringify(form),
-    });
-    alert('후기가 성공적으로 제출되었습니다!');
-  } catch {
-    alert('제출에 실패했습니다.');
-  }
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+
+      const text = await res.text();
+      if (text.includes('success')) {
+        alert('후기가 성공적으로 제출되었습니다!');
+        setForm({
+          name: '',
+          age: '',
+          gender: '',
+          type: '',
+          summary: '',
+          detail: '',
+          tag: ''
+        });
+      } else {
+        alert('제출에 실패했습니다.');
+      }
+    } catch {
+      alert('제출에 실패했습니다.');
+    }
   };
 
   return (
@@ -53,6 +68,7 @@ export default function ReviewWritePage() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             name="name"
+            value={form.name}
             placeholder="이름 (선택)"
             onChange={handleChange}
             className="w-full border rounded px-4 py-2"
@@ -103,6 +119,7 @@ export default function ReviewWritePage() {
 
           <input
             name="summary"
+            value={form.summary}
             placeholder="한줄평을 입력하세요"
             required
             onChange={handleChange}
@@ -111,6 +128,7 @@ export default function ReviewWritePage() {
 
           <textarea
             name="detail"
+            value={form.detail}
             placeholder="상세후기를 입력하세요"
             required
             onChange={handleChange}
@@ -119,6 +137,7 @@ export default function ReviewWritePage() {
 
           <input
             name="tag"
+            value={form.tag}
             placeholder="#테그 (예: #신속상담 #이자낮음)"
             onChange={handleChange}
             className="w-full border rounded px-4 py-2"
