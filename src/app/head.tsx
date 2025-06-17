@@ -1,5 +1,4 @@
-// ✅ src/app/head.tsx
-
+// src/app/head.tsx
 export default function Head() {
   return (
     <>
@@ -13,6 +12,19 @@ export default function Head() {
       <meta charSet="utf-8" />
       <meta name="theme-color" content="#ffffff" />
       <link rel="icon" href="/favicon.ico" />
+
+      {/* ✅ Google 애널리틱스(GA4) 추적 코드 */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ61H6TSYJ"></script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-NQ61H6TSYJ');
+          `,
+        }}
+      />
     </>
   );
 }
