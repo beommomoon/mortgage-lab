@@ -66,7 +66,7 @@ export default function HousingLoanGuide() {
 
       {/* 무료상담 신청 박스 */}
       <section className="bg-orange-50 border border-orange-200 px-5 py-6 rounded-xl shadow max-w-2xl mx-auto text-center mb-20">
-        <h2 className="text-2xl font-bold text-orange-600 mb-3">전문가에 비교견적 상담담받기</h2>
+        <h2 className="text-2xl font-bold text-orange-600 mb-3">전문가에 비교견적 상담받기</h2>
         <p className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">
           신규규담보대출 한도 확인 및 조건 비교를 원하신다면 지금 무료 상담을 신청하세요.<br />
           은행, 보험사, 조합, 저축은행, 캐피탈 등 수백개의 상품을을 빠르게 비교해드립니다.
