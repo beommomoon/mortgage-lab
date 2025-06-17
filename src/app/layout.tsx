@@ -1,11 +1,11 @@
 // src/app/layout.tsx
 import './globals.css';
 import { Inter } from 'next/font/google';
-import Head from 'next/head'; // ✅ Head 임포트
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
 
-// ✅ 메타데이터 설정 (SEO + OpenGraph + Twitter Card 포함)
+// ✅ 메타데이터 설정
 export const metadata = {
   title: 'Mortgage Lab | 부동산 담보대출 비교상담',
   description: '전문가가 비교 분석해드리는 부동산 담보대출 상담 플랫폼입니다.',
@@ -33,7 +33,7 @@ export const metadata = {
   verification: {
     other: {
       'naver-site-verification': '390d62759095bdd8de6c19e06c48c848a70a88e4',
-      'google-site-verification': 'cdGzMxazUkns8cSomj-NskoNk3X8tEiCHmIXoZgFdts', // ✅ 이 줄 추가
+      'google-site-verification': 'cdGzMxazUkns8cSomj-NskoNk3X8tEiCHmIXoZgFdts',
     },
   },
 };
@@ -51,7 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           content="부동산 담보대출, 비교견적, 신규대출, 추가대출, 대환대출, 정책자금, 모기지랩"
         />
 
-        {/* ✅ Google 애널리틱스(GA4) */}
+        {/* ✅ Google 애널리틱스(GA4) 추적 코드 */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ61H6TSYJ"></script>
         <script
           dangerouslySetInnerHTML={{
@@ -64,7 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
 
-        {/* ✅ 구조화 데이터 Schema.org */}
+        {/* ✅ 구조화 데이터 (Schema.org) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
