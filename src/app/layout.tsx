@@ -2,6 +2,7 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
+import Script from 'next/script'; // ✅ 추가: GA 추적을 위한 next/script
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -51,19 +52,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           content="부동산 담보대출, 비교견적, 신규대출, 추가대출, 대환대출, 정책자금, 모기지랩"
         />
 
-        {/* ✅ Google 애널리틱스(GA4) 추적 코드 */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ61H6TSYJ"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-NQ61H6TSYJ');
-            `,
-          }}
-        />
-
         {/* ✅ 구조화 데이터 (Schema.org) */}
         <script
           type="application/ld+json"
@@ -87,7 +75,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </Head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+
+        {/* ✅ Google 애널리틱스(GA4) 추적 코드 - Next.js 방식 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-NQ61H6TSYJ"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-NQ61H6TSYJ');
+            `,
+          }}
+        />
+      </body>
     </html>
   );
 }
