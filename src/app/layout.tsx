@@ -31,7 +31,8 @@ export const metadata = {
   },
   verification: {
     other: {
-      'naver-site-verification': '390d62759095bdd8de6c19e06c48c848a70a88e4',
+    'naver-site-verification': '390d62759095bdd8de6c19e06c48c848a70a88e4',
+    'google-site-verification': 'cdGzMxazUkns8cSomj-NskoNk3X8tEiCHmIXoZgFdts', // ✅ 이 줄 추가
     },
   },
 };
