@@ -6,7 +6,6 @@ import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
-// ✅ 메타데이터 설정
 export const metadata = {
   title: 'Mortgage Lab | 부동산 담보대출 비교상담',
   description: '전문가가 비교 분석해드리는 부동산 담보대출 상담 플랫폼입니다.',
@@ -33,7 +32,6 @@ export const metadata = {
   },
   verification: {
     other: {
-      // ✅ 네이버와 구글 사이트 인증 태그
       'naver-site-verification': '4e9748a703effe7187dbba1c1d12cadda96e11cb',
       'google-site-verification': 'cdGzMxazUkns8cSomj-NskoNk3X8tEiCHmIXoZgFdts',
     },
@@ -44,22 +42,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <Head>
-        {/* ✅ canonical URL */}
         <link rel="canonical" href="https://www.mortgage-lab.co.kr/" />
-
-        {/* ✅ keyword 메타태그 */}
         <meta
           name="keywords"
           content="부동산 담보대출, 비교견적, 신규대출, 추가대출, 대환대출, 정책자금, 모기지랩"
         />
-
-        {/* ✅ 네이버 Search Advisor용 메타태그 (추가로 직접 삽입해야 함) */}
         <meta
           name="naver-site-verification"
           content="4e9748a703effe7187dbba1c1d12cadda96e11cb"
         />
-
-        {/* ✅ 구조화 데이터 (Schema.org) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -82,11 +73,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </Head>
-
       <body className={inter.className}>
         {children}
-
-        {/* ✅ Google Analytics (GA4) 추적 코드 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NQ61H6TSYJ"
           strategy="afterInteractive"
