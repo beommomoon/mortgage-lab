@@ -1,8 +1,7 @@
-// src/app/layout.tsx
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
-import Script from 'next/script'; // ✅ 추가: GA 추적을 위한 next/script
+import Script from 'next/script'; // ✅ GA 추적을 위한 next/script
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -33,7 +32,7 @@ export const metadata = {
   },
   verification: {
     other: {
-      'naver-site-verification': '390d62759095bdd8de6c19e06c48c848a70a88e4',
+      'naver-site-verification': '4e9748a703effe7187dbba1c1d12cadda96e11cb', // ✅ 새 코드로 수정
       'google-site-verification': 'cdGzMxazUkns8cSomj-NskoNk3X8tEiCHmIXoZgFdts',
     },
   },
@@ -50,6 +49,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta
           name="keywords"
           content="부동산 담보대출, 비교견적, 신규대출, 추가대출, 대환대출, 정책자금, 모기지랩"
+        />
+
+        {/* ✅ 네이버 소유확인 메타태그 */}
+        <meta
+          name="naver-site-verification"
+          content="4e9748a703effe7187dbba1c1d12cadda96e11cb"
         />
 
         {/* ✅ 구조화 데이터 (Schema.org) */}
