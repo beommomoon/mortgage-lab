@@ -15,7 +15,11 @@ export default function Head() {
       <link rel="icon" href="/favicon.ico" />
       <link rel="canonical" href="https://www.mortgage-lab.co.kr/" />
 
-      {/* ✅ Open Graph (SNS 공유 시 썸네일/정보) */}
+      {/* ✅ 네이버/구글 사이트 소유확인 메타태그 */}
+      <meta name="naver-site-verification" content="4e9748a703effe7187dbba1c1d12cadda96e11cb" />
+      <meta name="google-site-verification" content="cdGzMxazUkns8cSomj-NskoNk3X8tEiCHmIXoZgFdts" />
+
+      {/* ✅ Open Graph (카카오톡, 페북, 네이버 등 미리보기) */}
       <meta property="og:title" content="Mortgage Lab | 담보대출 비교상담 플랫폼" />
       <meta
         property="og:description"
@@ -26,7 +30,7 @@ export default function Head() {
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Mortgage Lab" />
 
-      {/* ✅ Twitter Card (선택) */}
+      {/* ✅ Twitter Card (선택 사항) */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Mortgage Lab | 담보대출 비교상담 플랫폼" />
       <meta name="twitter:description" content="전문가가 비교 분석해드리는 담보대출 상담 플랫폼입니다." />
