@@ -1,8 +1,7 @@
-// src/app/layout.tsx
 import './globals.css';
 import { Inter } from 'next/font/google';
-import Head from 'next/head';
 import Script from 'next/script';
+import Head from 'next/head'; // ✅ Head 임포트
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,22 +29,21 @@ export const metadata = {
     description: '전문가가 비교 분석해드리는 부동산 담보대출 상담 플랫폼입니다.',
     images: ['https://www.mortgage-lab.co.kr/og-image.jpg'],
   },
-  verification: {
-    other: {
-      'naver-site-verification': '4e9748a703effe7187dbba1c1d12cadda96e11cb',
-      'google-site-verification': 'cdGzMxazUkns8cSomj-NskoNk3X8tEiCHmIXoZgFdts',
-    },
-  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
       <Head>
-        {/* ✅ 네이버 소유확인 메타태그 - 직접 삽입 */}
+        {/* ✅ 네이버 사이트 소유확인 */}
         <meta
           name="naver-site-verification"
           content="4e9748a703effe7187dbba1c1d12cadda96e11cb"
+        />
+        {/* ✅ 구글 사이트 인증도 함께 */}
+        <meta
+          name="google-site-verification"
+          content="cdGzMxazUkns8cSomj-NskoNk3X8tEiCHmIXoZgFdts"
         />
 
         {/* ✅ canonical URL */}
@@ -57,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           content="부동산 담보대출, 비교견적, 신규대출, 추가대출, 대환대출, 정책자금, 모기지랩"
         />
 
-        {/* ✅ 구조화 데이터 (Schema.org) */}
+        {/* ✅ 구조화 데이터 */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -80,10 +78,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </Head>
+
       <body className={inter.className}>
         {children}
 
-        {/* ✅ Google 애널리틱스(GA4) 추적 코드 */}
+        {/* ✅ Google Analytics GA4 추적 스크립트 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NQ61H6TSYJ"
           strategy="afterInteractive"
