@@ -1,9 +1,13 @@
-// src/app/review/head.tsx
-
 export const metadata = {
   title: '대출후기 게시판 - Mortgage Lab',
   description:
     '실제 고객들의 생생한 대출후기를 모았습니다. 다양한 대출 사례와 만족스러운 경험을 확인해보세요.',
+
+  metadataBase: new URL('https://www.mortgage-lab.co.kr'), // ✅ canonical 기준 URL
+  alternates: {
+    canonical: '/review', // ✅ 대표 주소 지정
+  },
+
   openGraph: {
     title: '대출후기 게시판 - Mortgage Lab',
     description:
@@ -20,6 +24,7 @@ export const metadata = {
     ],
     type: 'website',
   },
+
   twitter: {
     card: 'summary_large_image',
     title: '대출후기 게시판 - Mortgage Lab',
@@ -28,12 +33,3 @@ export const metadata = {
     images: ['https://www.mortgage-lab.co.kr/og-image.jpg'],
   },
 };
-
-export default function Head() {
-  return (
-    <>
-      <title>{metadata.title}</title>
-      <meta name="description" content={metadata.description} />
-    </>
-  );
-}
