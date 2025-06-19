@@ -2,6 +2,12 @@
 export const metadata = {
   title: '기존 대출 갈아타기 안내 - Mortgage Lab',
   description: '기존 대출보다 더 낮은 금리 조건으로 대환이 가능하며 최적의 대출상품을 추천해드립니다.',
+  
+  metadataBase: new URL('https://www.mortgage-lab.co.kr'),
+  alternates: {
+    canonical: '/loan-change',
+  },
+
   openGraph: {
     title: '기존 대출 갈아타기 안내 - Mortgage Lab',
     description: '기존 대출보다 더 낮은 금리 조건으로 대환이 가능하며 최적의 대출상품을 추천해드립니다.',
@@ -24,12 +30,3 @@ export const metadata = {
     images: ['https://www.mortgage-lab.co.kr/og-image.jpg'],
   },
 };
-
-export default function Head() {
-  return (
-    <>
-      <title>{metadata.title}</title>
-      <meta name="description" content={metadata.description} />
-    </>
-  );
-}
