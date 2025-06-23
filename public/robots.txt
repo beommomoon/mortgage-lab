@@ -1,11 +1,7 @@
 User-agent: *
 Allow: /
 
-# Host
-Host: https://mortgage-lab.co.kr
+Sitemap: https://www.mortgage-lab.co.kr/sitemap.xml
 
-# Sitemaps
-Sitemap: https://mortgage-lab.co.kr/sitemap.xml
-
-# 🔒 관리자 경로 제외
+# 관리자 경로 제외
 Disallow: /admin/
