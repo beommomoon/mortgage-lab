@@ -61,6 +61,8 @@ export default function ReviewCarousel() {
   useEffect(() => setMounted(true), []);
 
   const settings = {
+    centerMode: true,
+    centerPadding: '0px',
     dots: false,
     infinite: true,
     speed: 800,
@@ -71,8 +73,8 @@ export default function ReviewCarousel() {
     responsive: [
       { breakpoint: 1280, settings: { slidesToShow: 3 } },
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1.5 } },
-      { breakpoint: 640, settings: { slidesToShow: 1.1 } },
+      { breakpoint: 768, settings: { slidesToShow: 1.5, centerMode: true } },
+      { breakpoint: 640, settings: { slidesToShow: 1.1, centerMode: true } },
     ],
   };
 
