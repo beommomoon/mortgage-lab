@@ -1,46 +1,79 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata = {
-  title: '전문가가 비교해주는 담보대출 조건 | 모기지랩 무료상담',
-  description:
-    '수백 개 금융사 담보대출 조건을 무료로 비교해드립니다. 지금 바로 전문가와 맞춤 대출 상담 신청하세요.',
-  keywords: '부동산 담보대출, 비교견적, 신규대출, 추가대출, 대환대출, 정책자금, 모기지랩',
-  openGraph: {
-    title: '전문가가 비교해주는 담보대출 조건 | 모기지랩 무료상담',
-    description:
-      '수백 개 금융사 담보대출 조건을 무료로 비교해드립니다. 지금 바로 전문가와 맞춤 대출 상담 신청하세요.',
-    url: 'https://www.mortgage-lab.co.kr',
-    siteName: '모기지랩',
-    images: [
-      {
-        url: 'https://www.mortgage-lab.co.kr/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: '모기지랩 담보대출 비교상담',
-      },
-    ],
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: '전문가가 비교해주는 담보대출 조건 | 모기지랩 무료상담',
-    description:
-      '수백 개 금융사 담보대출 조건을 무료로 비교해드립니다. 지금 바로 전문가와 맞춤 대출 상담 신청하세요.',
-    images: ['https://www.mortgage-lab.co.kr/og-image.jpg'],
-  },
-  other: {
-    'google-site-verification': 'cdGzMxazUkns8cSomj-NskoNk3X8tEiCHmIXoZgFdts',
-  },
-};
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="ko">
-      <head />
+      <Head>
+        {/* 기본 메타태그 */}
+        <title>모기지랩 | 부동산 담보대출 비교상담 플랫폼</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.mortgage-lab.co.kr/" />
+        <link rel="icon" href="/favicon.ico" />
+
+        {/* ✅ 소유 확인 */}
+        <meta
+          name="naver-site-verification"
+          content="7322baa10f68b013403063a2c67501eebdfb275d"
+        />
+        <meta
+          name="google-site-verification"
+          content="cdGzMxazUkns8cSomj-NskoNk3X8tEiCHmIXoZgFdts"
+        />
+
+        {/* ✅ SEO */}
+        <meta
+          name="description"
+          content="모기지랩은 부동산 담보대출 조건을 전문가가 비교 분석해드리는 무료상담 플랫폼입니다."
+        />
+        <meta
+          name="keywords"
+          content="모기지랩, 부동산 담보대출, 비교견적, 신규대출, 추가대출, 대환대출, 정책자금"
+        />
+
+        {/* ✅ Open Graph */}
+        <meta
+          property="og:title"
+          content="모기지랩 | 담보대출 비교상담 플랫폼"
+        />
+        <meta
+          property="og:description"
+          content="전문가가 담보대출 조건을 비교 분석해드립니다. 지금 무료상담 신청하세요."
+        />
+        <meta
+          property="og:image"
+          content="https://www.mortgage-lab.co.kr/og-image.jpg"
+        />
+        <meta property="og:url" content="https://www.mortgage-lab.co.kr/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Mortgage Lab" />
+
+        {/* ✅ Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="모기지랩 | 담보대출 비교상담 플랫폼"
+        />
+        <meta
+          name="twitter:description"
+          content="전문가가 담보대출 조건을 비교 분석해드립니다."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.mortgage-lab.co.kr/og-image.jpg"
+        />
+      </Head>
       <body className={inter.className}>
         {children}
 
