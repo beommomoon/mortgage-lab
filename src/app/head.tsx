@@ -9,11 +9,11 @@ export default function Head() {
       <link rel="canonical" href="https://www.mortgage-lab.co.kr/" />
       <link rel="icon" href="/favicon.ico" />
 
-      {/* ✅ 소유 확인 */}
+      {/* ✅ 소유확인 메타태그 (네이버, 구글) */}
       <meta name="naver-site-verification" content="7322baa10f68b013403063a2c67501eebdfb275d" />
       <meta name="google-site-verification" content="cdGzMxazUkns8cSomj-NskoNk3X8tEiCHmIXoZgFdts" />
 
-      {/* ✅ SEO */}
+      {/* ✅ SEO 메타태그 */}
       <meta
         name="description"
         content="모기지랩은 부동산 담보대출 조건을 전문가가 비교 분석해드리는 무료상담 플랫폼입니다."

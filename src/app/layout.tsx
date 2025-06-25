@@ -40,13 +40,11 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <head>
-        <meta name="naver-site-verification" content="7322baa10f68b013403063a2c67501eebdfb275d" />
-      </head>
+      <head />
       <body className={inter.className}>
         {children}
 
-        {/* Google Analytics */}
+        {/* ✅ Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NQ6IH6TSYJ"
           strategy="afterInteractive"
