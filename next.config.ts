@@ -1,17 +1,22 @@
+// next.config.ts
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   images: {
     domains: [
-      'upload.wikimedia.org',
-      'www.k-startup.go.kr',
-      'www.sbiz.or.kr',
-      'www.wbiz.or.kr',
-      'www.seis.or.kr',
-      'www.smart-factory.kr',
-      'www.nonghyup.com'
+      /* … (기존) … */
+    ],
+  },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'mortgage-lab.co.kr' }],
+        destination: 'https://www.mortgage-lab.co.kr/:path*',
+        permanent: true,
+      },
     ]
-  }
+  },
 }
 
 export default nextConfig
