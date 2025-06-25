@@ -37,9 +37,20 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="ko">
+      <head>
+        {/* ✅ 네이버 소유확인 메타태그 추가 */}
+        <meta
+          name="naver-site-verification"
+          content="7322baa10f68b013403063a2c67501eebdfb275d"
+        />
+      </head>
       <body className={inter.className}>
         {children}
         {/* Google Analytics */}
