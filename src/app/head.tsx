@@ -12,7 +12,7 @@ export default function Head() {
       <link rel="icon" href="/favicon.ico" />
 
       {/* ✅ 소유 확인 */}
-      <meta name="naver-site-verification" content="4e9748a703effe7187dbba1c1d12cadda96e11cb" />
+      <meta name="naver-site-verification" content="7322baa10f68b013403063a2c67501eebdfb275d" />
       <meta name="google-site-verification" content="cdGzMxazUkns8cSomj-NskoNk3X8tEiCHmIXoZgFdts" />
 
       {/* ✅ SEO */}
