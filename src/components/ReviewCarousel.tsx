@@ -94,7 +94,7 @@ export default function ReviewCarousel() {
           );
 
           return (
-            <div key={i} className="px-2 box-border min-w-0">
+            <div key={i} className="px-2 box-border min-w-[250px] max-w-[300px] w-full shrink-0">
               <div className="bg-white border shadow-md rounded-xl p-4 h-full flex flex-col justify-between min-h-[200px]">
                 <div className="text-orange-500 text-3xl mb-2">“</div>
                 <div
