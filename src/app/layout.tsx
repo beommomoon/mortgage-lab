@@ -9,6 +9,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ko">
       <body className={inter.className}>
         {children}
+
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NQ6IH6TSYJ"
@@ -26,6 +27,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `,
           }}
         />
+
+        {/* Naver Analytics */}
+        <Script src="//wcs.naver.net/wcslog.js" strategy="afterInteractive" />
+        <Script id="wcs-analytics" strategy="afterInteractive">
+          {`
+            if (!wcs_add) var wcs_add = {};
+            wcs_add["wa"] = "128c8e18fdcdf80";
+            if (window.wcs) wcs_do();
+          `}
+        </Script>
       </body>
     </html>
   );
