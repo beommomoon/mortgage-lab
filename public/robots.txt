@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
-Sitemap: https://www.mortgage-lab.co.kr/sitemap.xml
+# Host
+Host: https://mortgage-lab.co.kr
+
+# Sitemaps
+Sitemap: https://mortgage-lab.co.kr/sitemap.xml
