@@ -1,10 +1,9 @@
 export const metadata = {
   title: '비교견적 무료상담 신청 - Mortgage Lab',
   description: '고객님의 상황에 딱 맞는 대출 조건을 전문가가 비교분석하여 드립니다.',
-  
-  metadataBase: new URL('https://www.mortgage-lab.co.kr'), // ✅ canonical에 필요
+  metadataBase: new URL('https://www.mortgage-lab.co.kr'), // ✅ 메인 도메인 기준으로 수정
   alternates: {
-    canonical: '/consultation', // ✅ 중복 방지용 대표 주소
+    canonical: '/', // ✅ 메인 도메인으로 수정
   },
   openGraph: {
     title: '비교견적 무료상담 신청 - Mortgage Lab',

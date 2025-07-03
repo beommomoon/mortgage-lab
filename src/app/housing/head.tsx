@@ -1,15 +1,13 @@
 export const metadata = {
   title: '신규 담보대출 안내 - Mortgage Lab',
-  description: '가계자금, 사업자금, 매매잔금, 경매잔금, 보증서담보 등 다양한 신규담보대출을 소개합니다.',
-  
-  metadataBase: new URL('https://www.mortgage-lab.co.kr'), // ✅ 추가
+  description: '가격지수, 사업자금, 매매잔금, 경매잔금, 보증서담보 등 다양한 신규담보대출을 소개합니다.',
+  metadataBase: new URL('https://www.mortgage-lab.co.kr'), // ✅ 메인 도메인으로 수정
   alternates: {
-    canonical: '/housing', // ✅ 추가
+    canonical: '/', // ✅ 메인 도메인으로 수정
   },
-  
   openGraph: {
     title: '신규 담보대출 안내 - Mortgage Lab',
-    description: '가계자금, 사업자금, 매매잔금, 경매잔금, 보증서담보 등 다양한 신규담보대출을 소개합니다.',
+    description: '가격지수, 사업자금, 매매잔금, 경매잔금, 보증서담보 등 다양한 신규담보대출을 소개합니다.',
     url: 'https://www.mortgage-lab.co.kr/housing',
     siteName: 'Mortgage Lab',
     images: [
@@ -25,7 +23,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '신규 담보대출 안내 - Mortgage Lab',
-    description: '가계자금, 사업자금, 매매잔금, 경매잔금, 보증서담보 등 다양한 신규담보대출을 소개합니다.',
+    description: '가격지수, 사업자금, 매매잔금, 경매잔금, 보증서담보 등 다양한 신규담보대출을 소개합니다.',
     images: ['https://www.mortgage-lab.co.kr/og-image.jpg'],
   },
 };

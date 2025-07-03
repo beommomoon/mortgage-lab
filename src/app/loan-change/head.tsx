@@ -1,13 +1,10 @@
-// src/app/loan-change/head.tsx
 export const metadata = {
   title: '기존 대출 갈아타기 안내 - Mortgage Lab',
   description: '기존 대출보다 더 낮은 금리 조건으로 대환이 가능하며 최적의 대출상품을 추천해드립니다.',
-  
-  metadataBase: new URL('https://www.mortgage-lab.co.kr'),
+  metadataBase: new URL('https://www.mortgage-lab.co.kr'), // ✅ 메인 도메인으로 수정
   alternates: {
-    canonical: '/loan-change',
+    canonical: '/', // ✅ 메인 도메인으로 수정
   },
-
   openGraph: {
     title: '기존 대출 갈아타기 안내 - Mortgage Lab',
     description: '기존 대출보다 더 낮은 금리 조건으로 대환이 가능하며 최적의 대출상품을 추천해드립니다.',

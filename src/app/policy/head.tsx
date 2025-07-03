@@ -1,12 +1,10 @@
 export const metadata = {
   title: '정책자금 신청 안내 - Mortgage Lab',
   description: '정부 및 공공기관이 지원하는 중소기업·소상공인 대상 정책자금 대출 신청 조건과 절차를 상세하게 안내합니다.',
-
-  metadataBase: new URL('https://www.mortgage-lab.co.kr'), // ✅ canonical 경로 기준
+  metadataBase: new URL('https://www.mortgage-lab.co.kr'), // ✅ 메인 도메인으로 통일
   alternates: {
-    canonical: '/policy', // ✅ 대표 주소 지정
+    canonical: '/', // ✅ 메인 도메인으로 통일
   },
-
   openGraph: {
     title: '정책자금 신청 안내 - Mortgage Lab',
     description: '정부 및 공공기관이 지원하는 중소기업·소상공인 대상 정책자금 대출 신청 조건과 절차를 상세하게 안내합니다.',
@@ -22,7 +20,6 @@ export const metadata = {
     ],
     type: 'website',
   },
-
   twitter: {
     card: 'summary_large_image',
     title: '정책자금 신청 안내 - Mortgage Lab',
