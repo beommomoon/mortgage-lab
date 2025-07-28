@@ -119,12 +119,8 @@ export default function Home() {
             복잡한 대출, 전문가가 꼼꼼하게 비교분석 해드립니다.
             <span className="font-bold text-blue-600"> - Mortgage Lab.</span>
           </p>
-          <div className="max-w-4xl text-left mt-6 text-sm sm:text-base leading-relaxed text-gray-700">
-          <p><strong>모기지랩</strong>은 부동산 담보대출 비교상담 플랫폼입니다. 대출을 원하는 고객의 조건에 따라 수백 개 금융사 상품을 전문가가 비교하고, 맞춤형 조건을 안내해드립니다.</p>
-          <p>주요 서비스는 신규담보대출, 추가담보대출, 기존대출 갈아타기, 정책자금 신청 등으로 구성되어 있으며, 고객 후기와 전문가 상담 시스템을 통해 보다 정확하고 신속한 대출 서비스를 제공합니다.</p>
-          <p>모기지랩은 안전하고 믿을 수 있는 대출상담 서비스를 추구하며, 전화상담 및 온라인 무료상담 신청을 언제든지 이용하실 수 있습니다.</p>
-          </div>
-          <div className="w-full max-w-6xl mb-6">
+
+          <div className="w-full max-w-6xl mb-4">
             <ImageSlider images={images} />
           </div>
 
