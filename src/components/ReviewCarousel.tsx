@@ -61,6 +61,8 @@ export default function ReviewCarousel() {
   useEffect(() => setMounted(true), []);
 
   const settings = {
+    centerMode: true,
+    centerPadding: '0px',
     dots: false,
     infinite: true,
     speed: 800,
@@ -71,8 +73,8 @@ export default function ReviewCarousel() {
     responsive: [
       { breakpoint: 1280, settings: { slidesToShow: 3 } },
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1.5 } },
-      { breakpoint: 640, settings: { slidesToShow: 1.1 } },
+      { breakpoint: 768, settings: { slidesToShow: 1.5, centerMode: true } },
+      { breakpoint: 640, settings: { slidesToShow: 1.1, centerMode: true } },
     ],
   };
 
@@ -92,7 +94,7 @@ export default function ReviewCarousel() {
           );
 
           return (
-            <div key={i} className="px-2 box-border min-w-0">
+            <div key={i} className="px-2 box-border min-w-[250px] max-w-[300px] w-full shrink-0">
               <div className="bg-white border shadow-md rounded-xl p-4 h-full flex flex-col justify-between min-h-[200px]">
                 <div className="text-orange-500 text-3xl mb-2">“</div>
                 <div

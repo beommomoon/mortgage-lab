@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import ImageSlider from '@/components/ImageSlider';
 import ReviewCarousel from '@/components/ReviewCarousel';
-import { useState, useEffect } from 'react'; // ✅ 이렇게 바꿔주세요!
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -23,7 +23,7 @@ export default function Home() {
   const images = ['/slide1.jpg', '/slide2.jpg', '/slide3.jpg'];
   const [mode, setMode] = useState<'home' | 'login' | 'admin'>('home');
   const [password, setPassword] = useState('');
-  const [data, setData] = useState<SheetData[]>([]); // ✅ 시트 데이터용
+  const [data, setData] = useState<SheetData[]>([]);
 
   const handleLogin = () => {
     if (password === 'mentor') {
@@ -36,14 +36,16 @@ export default function Home() {
   useEffect(() => {
     if (mode === 'admin') {
       fetch('https://script.google.com/macros/s/AKfycbydkzI1RWIDpdADnkkEvC0NgvZu5RiPPI1jru-GnBC8TTS6XjTgC0f12J3pr0dVDa1nqA/exec')
-        .then((res) => res.json())
-        .then((resData) => setData(resData))
+        .then(res => res.json())
+        .then(resData => setData(resData))
         .catch(() => alert('데이터를 불러오지 못했습니다.'));
     }
   }, [mode]);
 
   return (
     <main className="relative bg-white min-h-screen flex flex-col items-center justify-start px-4 pt-10 pb-20">
+      
+      {/* 상단 버튼 */}
       {mode === 'home' && (
         <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 flex items-center gap-3">
           <Link href="/review/write">
@@ -60,40 +62,37 @@ export default function Home() {
         </div>
       )}
 
-      {/* ✅ 로그인 화면 */}
+      {/* 관리자 로그인 */}
       {mode === 'login' && (
-        <div className="mt-32 text-center">
+        <div className="mt-32 text-center w-full max-w-sm mx-auto px-4">
           <h2 className="text-xl font-semibold mb-4">🔐 관리자 비밀번호를 입력하세요</h2>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="비밀번호 입력"
-            className="border px-4 py-2 rounded mb-4"
+            className="border px-4 py-2 rounded mb-4 w-full"
           />
-          <div>
-            <button
-              onClick={handleLogin}
-              className="bg-orange-500 text-white px-6 py-2 rounded hover:bg-orange-600"
-            >
-              확인
-            </button>
-          </div>
+          <button
+            onClick={handleLogin}
+            className="w-full bg-orange-500 text-white px-6 py-2 rounded hover:bg-orange-600"
+          >
+            확인
+          </button>
         </div>
       )}
 
-      {/* ✅ 시트 출력 화면 */}
+      {/* 관리자 시트 */}
       {mode === 'admin' && (
-        <div className="w-full max-w-6xl mt-10 px-2">
+        <div className="w-full max-w-6xl mt-10 px-4">
           <h2 className="text-xl font-bold mb-4 text-center">📋 상담신청 리스트</h2>
           <div className="overflow-x-auto">
             <table className="table-auto w-full border border-gray-300 text-sm">
               <thead>
                 <tr>
-                  {data.length > 0 &&
-                    Object.keys(data[0]).map((key) => (
-                      <th key={key} className="border px-2 py-1 bg-gray-100">{key}</th>
-                    ))}
+                  {data.length > 0 && Object.keys(data[0]).map(key => (
+                    <th key={key} className="border px-2 py-1 bg-gray-100">{key}</th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
@@ -110,110 +109,71 @@ export default function Home() {
         </div>
       )}
 
+      {/* 메인 화면 */}
       {mode === 'home' && (
         <>
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 text-center mt-10 mb-3 tracking-tight">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 text-center mt-10 mb-3 px-2">
             Mortgage Lab - 대출연구소
           </h1>
-          <p className="text-center text-gray-600 text-sm sm:text-base md:text-lg font-medium mb-4 leading-snug sm:leading-normal px-2">
+          <p className="text-center text-gray-600 text-sm sm:text-base md:text-lg font-medium mb-4 px-2">
             복잡한 대출, 전문가가 꼼꼼하게 비교분석 해드립니다.
             <span className="font-bold text-blue-600"> - Mortgage Lab.</span>
           </p>
-
-          <div className="w-full max-w-6xl mb-4">
+          <div className="max-w-4xl text-left mt-6 text-sm sm:text-base leading-relaxed text-gray-700">
+          <p><strong>모기지랩</strong>은 부동산 담보대출 비교상담 플랫폼입니다. 대출을 원하는 고객의 조건에 따라 수백 개 금융사 상품을 전문가가 비교하고, 맞춤형 조건을 안내해드립니다.</p>
+          <p>주요 서비스는 신규담보대출, 추가담보대출, 기존대출 갈아타기, 정책자금 신청 등으로 구성되어 있으며, 고객 후기와 전문가 상담 시스템을 통해 보다 정확하고 신속한 대출 서비스를 제공합니다.</p>
+          <p>모기지랩은 안전하고 믿을 수 있는 대출상담 서비스를 추구하며, 전화상담 및 온라인 무료상담 신청을 언제든지 이용하실 수 있습니다.</p>
+          </div>
+          <div className="w-full max-w-6xl mb-6">
             <ImageSlider images={images} />
           </div>
 
           <button
             onClick={() => router.push('/consultation')}
-            className="w-full max-w-xs sm:max-w-sm md:max-w-md px-6 py-3 mb-6 bg-gradient-to-r from-orange-400 to-orange-600 text-white text-base sm:text-lg font-bold rounded-full shadow hover:from-orange-500 hover:to-orange-700 transition"
+            className="w-full max-w-xs sm:max-w-sm md:max-w-md px-6 py-3 mb-8 bg-gradient-to-r from-orange-400 to-orange-600 text-white text-base sm:text-lg font-bold rounded-full shadow hover:from-orange-500 hover:to-orange-700 transition"
           >
             무료상담 신청하기
           </button>
 
           {/* 카드형 메뉴 */}
-<div className="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full max-w-6xl px-4">
-  <a href="/housing" className="flex flex-col items-center bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform">
-    <div className="relative w-full aspect-[4/3]">
-      <Image
-        src="/pexels-karolina-grabowska-5632396.jpg"
-        alt="신규담보대출"
-        fill
-        sizes="(max-width: 768px) 100vw, 25vw"
-        className="object-cover"
-        quality={100}
-        priority
-      />
-    </div>
-    <div className="py-3 px-2 text-center text-lg font-extrabold text-gray-800">신규담보대출</div>
-  </a>
-
-  <a href="/apartment" className="flex flex-col items-center bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform">
-    <div className="relative w-full aspect-[4/3]">
-      <Image
-        src="/pexels-karolina-grabowska-5632394.jpg"
-        alt="추가담보대출"
-        fill
-        sizes="(max-width: 768px) 100vw, 25vw"
-        className="object-cover"
-        quality={100}
-      />
-    </div>
-    <div className="py-3 px-2 text-center text-lg font-extrabold text-gray-800">추가담보대출</div>
-  </a>
-
-  <a href="/loan-change" className="flex flex-col items-center bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform">
-    <div className="relative w-full aspect-[4/3]">
-      <Image
-        src="/pexels-karolina-grabowska-5632386.jpg"
-        alt="기존대출갈아타기"
-        fill
-        sizes="(max-width: 768px) 100vw, 25vw"
-        className="object-cover"
-        quality={100}
-      />
-    </div>
-    <div className="py-3 px-2 text-center text-lg font-extrabold text-gray-800">기존대출갈아타기</div>
-  </a>
-
-  <a href="/policy" className="flex flex-col items-center bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform">
-    <div className="relative w-full aspect-[4/3]">
-      <Image
-        src="/pexels-kaboompics-6372.jpg"
-        alt="정책자금신청 클릭"
-        fill
-        sizes="(max-width: 768px) 100vw, 25vw"
-        className="object-cover"
-        quality={100}
-      />
-    </div>
-    <div className="py-3 px-2 text-center text-lg font-extrabold text-gray-800">정책자금신청</div>
-  </a>
-</div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-6xl mb-10 px-2">
+            {[
+              { href: '/housing', src: '/pexels-karolina-grabowska-5632396.jpg', label: '신규담보대출' },
+              { href: '/apartment', src: '/pexels-karolina-grabowska-5632394.jpg', label: '추가담보대출' },
+              { href: '/loan-change', src: '/pexels-karolina-grabowska-5632386.jpg', label: '기존대출갈아타기' },
+              { href: '/policy', src: '/pexels-kaboompics-6372.jpg', label: '정책자금신청' }
+            ].map(({ href, src, label }) => (
+              <a key={href} href={href} className="flex flex-col items-center bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform">
+                <div className="relative w-full aspect-[4/3]">
+                  <Image src={src} alt={label} fill sizes="(max-width: 768px) 100vw, 25vw" className="object-cover" quality={100} />
+                </div>
+                <div className="py-3 px-2 text-center text-lg font-extrabold text-gray-800">{label}</div>
+              </a>
+            ))}
+          </div>
 
           {/* 후기 슬라이더 */}
-          <div className="w-full max-w-6xl mt-12">
-            <div className="text-center mb-6">
-              <p className="text-2xl sm:text-3xl font-semibold text-gray-800 font-sans">
+          <div className="w-full max-w-6xl mt-12 px-2">
+              <p className="text-center text-xl sm:text-2xl md:text-3xl font-semibold mb-6 leading-snug">
                 📢 <span className="text-orange-500">생생한 고객 후기 모음</span>
               </p>
-            </div>
 
+            {/* 후기 카드 슬라이더 */}
             <ReviewCarousel />
 
             {/* 후기 더보기 버튼 */}
             <div className="text-center mt-4">
               <Link href="/review/write">
-                <span className="text-2xl text-blue-600 underline hover:text-blue-800 transition font-normal font-sans">
+                <span className="text-base sm:text-lg md:text-xl text-blue-600 underline hover:text-blue-800 transition">
                   대출후기 더보기 →
                 </span>
               </Link>
             </div>
 
             {/* 금융사 리스트 설명 */}
-            <div className="mt-20 px-4 text-center">
+            <div className="w-full max-w-6xl mt-20 px-4 text-center">
               <div className="mb-10">
-                <p className="text-xl sm:text-2xl font-bold text-gray-700 leading-relaxed font-sans text-center">
+                <p className="text-lg sm:text-xl font-bold mb-10 leading-relaxed">
                   수백 개 금융사 상품(은행·캐피탈·저축은행) 조건을 비교분석하여,
                   <br className="hidden sm:block" />
                   금융전문가가 고객님 상황에 꼭 맞는 <span className="text-red-600 font-extrabold">맞춤 대출</span>을 찾아드립니다.
