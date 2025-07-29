@@ -1,13 +1,17 @@
 export const metadata = {
   title: '무료 대출 비교상담 신청 - Mortgage Lab',
-  description: '고객님의 상황에 꼭 맞는 대출 조건을 전문가가 비교 분석하여 무료로 안내드립니다. 주택담보, 대환, 추가대출 모두 가능합니다.',
+  description: '고객님의 상황에 맞는 대출 조건을 전문가가 무료로 분석해드립니다. 주택담보, 대환, 추가대출 모두 가능!',
   metadataBase: new URL('https://www.mortgage-lab.co.kr'),
   alternates: {
-    canonical: '/consultation', // ✅ 정확한 경로로 수정!
+    canonical: '/consultation',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
   openGraph: {
-    title: '무료 대출 비교상담 신청 - Mortgage Lab',
-    description: '고객님의 상황에 맞는 담보대출 조건을 전문가가 무료로 분석해드립니다. 신규/대환/추가대출 모두 가능!',
+    title: '무료 대출 비교상담 안내 - Mortgage Lab',
+    description: '고객님의 상황에 맞는 대출 조건을 전문가가 무료로 분석해드립니다. 신규/대환/추가대출 모두 가능!',
     url: 'https://www.mortgage-lab.co.kr/consultation',
     siteName: 'Mortgage Lab',
     images: [
@@ -23,7 +27,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '무료 대출 비교상담 신청 - Mortgage Lab',
-    description: '고객님의 상황에 맞는 담보대출 조건을 전문가가 무료로 분석해드립니다.',
+    description: '고객님의 상황에 맞는 대출 조건을 전문가가 무료로 분석해드립니다.',
     images: ['https://www.mortgage-lab.co.kr/og-image.jpg'],
   },
 };
