@@ -1,9 +1,9 @@
 export const metadata = {
-  title: '대출후기 게시판 - Mortgage Lab',
-  description: '실제 고객들의 생생한 대출후기를 모았습니다. 다양한 대출 사례와 만족스러운 경험을 확인해보세요.',
-  metadataBase: new URL('https://www.mortgage-lab.co.kr'), // ✅ 메인 도메인 기준 통일
+  title: '실제 고객 대출후기 모음 - 만족도 높은 담보대출 사례 | Mortgage Lab',
+  description: '대출 상담부터 실행까지! 고객들의 생생한 대출후기를 통해 만족도 높은 사례와 과정을 확인해보세요.',
+  metadataBase: new URL('https://www.mortgage-lab.co.kr'),
   alternates: {
-    canonical: '/', // ✅ 메인 도메인 기준으로 통일
+    canonical: '/review', // ✅ 필수 수정
   },
   openGraph: {
     title: '대출후기 게시판 - Mortgage Lab',
@@ -15,7 +15,7 @@ export const metadata = {
         url: 'https://www.mortgage-lab.co.kr/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: '고객 대출후기 이미지',
+        alt: 'Mortgage Lab 고객 대출 후기 모음 이미지',
       },
     ],
     type: 'website',
