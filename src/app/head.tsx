@@ -1,12 +1,10 @@
 // src/app/head.tsx
-import NextHead from 'next/head';
-
 export const metadata = {
   title: '모기지랩 ｜ 부동산 담보대출 전문가 비교상담 - 대환·추가대출까지',
   description: '모기지랩은 주택 및 부동산 담보대출에 특화된 비교상담 플랫폼입니다. 신규대출, 대환대출, 추가대출까지 전문가가 조건을 비교 분석해드립니다.',
   metadataBase: new URL('https://www.mortgage-lab.co.kr'),
   alternates: {
-    canonical: 'https://www.mortgage-lab.co.kr/',
+    canonical: '/',
   },
   openGraph: {
     title: '모기지랩 ｜ 부동산 담보대출 전문가 비교상담',
@@ -37,15 +35,10 @@ export const metadata = {
   },
 };
 
-export default function CustomHead() {
+export default function Head() {
   return (
     <>
       <link rel="icon" href="/favicon.ico" />
-      <NextHead>
-        <title>모기지랩 ｜ 부동산 담보대출 전문가 비교상담 - 대환·추가대출까지</title>
-        <meta name="description" content="모기지랩은 주택 및 부동산 담보대출에 특화된 비교상담 플랫폼입니다. 신규대출, 대환대출, 추가대출까지 전문가가 조건을 비교 분석해드립니다." />
-        <link rel="canonical" href="https://www.mortgage-lab.co.kr/" />
-      </NextHead>
     </>
   );
 }
