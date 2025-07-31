@@ -1,8 +1,8 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import ImageSlider from '@/components/ImageSlider';
-import ReviewCarousel from '@/components/ReviewCarousel';
+import ImageSlider from '../components/ImageSlider';
+import ReviewCarousel from '../components/ReviewCarousel';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -153,7 +153,6 @@ export default function Home() {
             <p className="text-center text-xl sm:text-2xl md:text-3xl font-semibold mb-6 leading-snug">
               📢 <span className="text-orange-500">생생한 고객 후기 모음</span>
             </p>
-            {/* 후기 카드 슬라이더 */}
             <ReviewCarousel />
 
             {/* 후기 더보기 버튼 */}
