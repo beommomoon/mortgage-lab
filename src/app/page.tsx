@@ -150,10 +150,9 @@ export default function Home() {
 
           {/* 후기 슬라이더 */}
           <div className="w-full max-w-6xl mt-12 px-2">
-              <p className="text-center text-xl sm:text-2xl md:text-3xl font-semibold mb-6 leading-snug">
-                📢 <span className="text-orange-500">생생한 고객 후기 모음</span>
-              </p>
-
+            <p className="text-center text-xl sm:text-2xl md:text-3xl font-semibold mb-6 leading-snug">
+              📢 <span className="text-orange-500">생생한 고객 후기 모음</span>
+            </p>
             {/* 후기 카드 슬라이더 */}
             <ReviewCarousel />
 
@@ -175,7 +174,6 @@ export default function Home() {
                   금융전문가가 고객님 상황에 꼭 맞는 <span className="text-red-600 font-extrabold">맞춤 대출</span>을 찾아드립니다.
                 </p>
               </div>
-
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 text-sm text-gray-700 text-left max-w-6xl mx-auto">
                 <div>
                   <h3 className="font-bold text-gray-900 mb-2">은행</h3>
@@ -265,25 +263,24 @@ export default function Home() {
         </>
       )}
 
-{/* 하단 고지사항 - 왼쪽 검정 / 오른쪽 빨강 (3줄 최적화) */}
-<div className="w-full bg-gray-100 border-t border-gray-300 px-6 py-6 text-[11px] sm:text-sm leading-relaxed mt-10">
-  <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-start gap-4">
-    {/* 왼쪽 검정 정보 */}
-    <div className="text-gray-800 space-y-[2px] leading-snug">
-      <p><strong>상호</strong>: 알트캐피탈대부 ｜ <strong>대표자</strong>: 문범모 ｜ <strong>등록번호</strong>: 2022-대전-3835</p>
-      <p><strong>대부이자율</strong>: 연 20% 이내 ｜ <strong>연체이자율</strong>: 연 20% 이내 ｜ <strong>추가비용</strong>: 없음 ｜ <strong>조기상환수수료</strong>: 없음</p>
-      <p><strong>주소</strong>: 대전광역시 서구 계룡로367번길 100, 지하1 에이21호 (갈마동) ｜ <strong>전화번호</strong>: 1644-5638, 010-2442-4835</p>
-      <p><strong>등록기관 및 확인번호</strong>: 대전광역시청 금융과 042-270-3516</p>
-    </div>
-
-    {/* 오른쪽 빨간 경고문 (3줄 구성) */}
-    <div className="text-red-600 font-semibold space-y-[2px] leading-snug text-left ml-auto md:w-[380px]">
-      <p>과도한 빚은 당신에게 큰 불행을 안겨줄 수 있습니다.</p>
-      <p>대출 시 귀하의 신용점수가 하락할 수 있으며, 타 금융거래에 제약을 받을 수 있습니다.</p>
-      <p>연체 시 불이익이 발생할 수 있으니 유의하시기 바랍니다.</p>
-    </div>
-  </div>
-</div>
+      {/* 하단 고지사항 */}
+      <div className="w-full bg-gray-100 border-t border-gray-300 px-6 py-6 text-[11px] sm:text-sm leading-relaxed mt-10">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-start gap-4">
+          {/* 왼쪽 검정 정보 */}
+          <div className="text-gray-800 space-y-[2px] leading-snug">
+            <p><strong>상호</strong>: 알트캐피탈대부 ｜ <strong>대표자</strong>: 문범모 ｜ <strong>등록번호</strong>: 2022-대전-3835</p>
+            <p><strong>대부이자율</strong>: 연 20% 이내 ｜ <strong>연체이자율</strong>: 연 20% 이내 ｜ <strong>추가비용</strong>: 없음 ｜ <strong>조기상환수수료</strong>: 없음</p>
+            <p><strong>주소</strong>: 대전광역시 서구 계룡로367번길 100, 지하1 에이21호 (갈마동) ｜ <strong>전화번호</strong>: 1644-5638, 010-2442-4835</p>
+            <p><strong>등록기관 및 확인번호</strong>: 대전광역시청 금융과 042-270-3516</p>
+          </div>
+          {/* 오른쪽 빨간 경고문 */}
+          <div className="text-red-600 font-semibold space-y-[2px] leading-snug text-left ml-auto md:w-[380px]">
+            <p>과도한 빚은 당신에게 큰 불행을 안겨줄 수 있습니다.</p>
+            <p>대출 시 귀하의 신용점수가 하락할 수 있으며, 타 금융거래에 제약을 받을 수 있습니다.</p>
+            <p>연체 시 불이익이 발생할 수 있으니 유의하시기 바랍니다.</p>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
