@@ -267,10 +267,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-start gap-4">
           {/* 왼쪽 검정 정보 */}
           <div className="text-gray-800 space-y-[2px] leading-snug">
-            <p><strong>상호</strong>: 알트캐피탈대부 ｜ <strong>대표자</strong>: 문범모 ｜ <strong>등록번호</strong>: 2022-대전-3835</p>
+            <p><strong>상호</strong>: ｜ <strong>대표자</strong>: ｜ <strong>등록번호</strong>: </p>
             <p><strong>대부이자율</strong>: 연 20% 이내 ｜ <strong>연체이자율</strong>: 연 20% 이내 ｜ <strong>추가비용</strong>: 없음 ｜ <strong>조기상환수수료</strong>: 없음</p>
-            <p><strong>주소</strong>: 대전광역시 서구 계룡로367번길 100, 지하1 에이21호 (갈마동) ｜ <strong>전화번호</strong>: 1644-5638, 010-2442-4835</p>
-            <p><strong>등록기관 및 확인번호</strong>: 대전광역시청 금융과 042-270-3516</p>
+            <p><strong>주소</strong>: ｜ <strong>전화번호</strong>: </p>
+            <p><strong>등록기관 및 확인번호</strong>: </p>
           </div>
           {/* 오른쪽 빨간 경고문 */}
           <div className="text-red-600 font-semibold space-y-[2px] leading-snug text-left ml-auto md:w-[380px]">
